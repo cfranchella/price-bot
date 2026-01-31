@@ -66,8 +66,8 @@ def comando_precio(message):
         e_btc = "🟢" if btc_v >= 0 else "🔴"
         e_eth = "🟢" if eth_v >= 0 else "🔴"
         msg = (f"💰 **Precios Actuales (24h):**\n\n"
-               f"₿ **BTC:** `${btc:,.2f}` ({e_btc} {btc_v:+.2f}%)\n"
-               f"♦️ **ETH:** `${eth:,.2f}` ({e_eth} {eth_v:+.2f}%)")
+               f"**BTC:** `${btc:,.2f}` ({e_btc} {btc_v:+.2f}%)\n"
+               f"**ETH:** `${eth:,.2f}` ({e_eth} {eth_v:+.2f}%)")
         bot.send_message(message.chat.id, msg, parse_mode="Markdown")
     else:
         bot.send_message(message.chat.id, "⚠️ Error al obtener precios. Intenta de nuevo en unos segundos.")
