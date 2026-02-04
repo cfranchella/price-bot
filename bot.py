@@ -93,19 +93,19 @@ def verificar_alertas():
     btc, _ = obtener_datos("BTC")
     
     if btc:
-        # Lógica para BTC menor a 80,000
-        if btc < 80000:
+        # Lógica para BTC menor a 72,000
+        if btc < 72000:
             if estado_alerta != "bajo":
-                bot.send_message(CHAT_ID, f"📉 **ALERTA BAJISTA:** BTC cayó por debajo de 80k! Valor actual: `${btc:,.2f}`", parse_mode="Markdown")
+                bot.send_message(CHAT_ID, f"📉 **ALERTA BAJISTA:** BTC cayó por debajo de 72k! Valor actual: `${btc:,.2f}`", parse_mode="Markdown")
                 estado_alerta = "bajo"
         
-        # Lógica para BTC mayor a 85,000
-        elif btc > 85000:
+        # Lógica para BTC mayor a 80,000
+        elif btc > 80000:
             if estado_alerta != "alto":
-                bot.send_message(CHAT_ID, f"🚀 **ALERTA ALCISTA:** BTC superó los 85k! Valor actual: `${btc:,.2f}`", parse_mode="Markdown")
+                bot.send_message(CHAT_ID, f"🚀 **ALERTA ALCISTA:** BTC superó los 80k! Valor actual: `${btc:,.2f}`", parse_mode="Markdown")
                 estado_alerta = "alto"
         
-        # Resetear estado si vuelve al rango normal (entre 80k y 85k)
+        # Resetear estado si vuelve al rango normal (entre 72k y 80k)
         else:
             estado_alerta = None
 
